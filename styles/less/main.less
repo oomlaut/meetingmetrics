@@ -1,0 +1,42 @@
+@import-once "bootstrap/bootstrap";
+@import-once "bootstrap/responsive";
+@import-once "http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css";
+@import-once "http://fonts.googleapis.com/css?family=Open+Sans:400,700";
+
+body{ padding-top:60px; }
+.btn:hover{cursor:pointer;}
+
+input{
+	text-align:center;
+	&.control[name="rate"]{
+		text-align:right;
+	}
+}
+
+.add-on.currency i{
+	font-weight:700;
+	font-style:normal;
+}
+
+#overlay{
+	background-color:rgba(255,255,255,.85);
+	display:none;
+	height:100%;
+	position:fixed;
+	right:0;
+	top:0;
+	width:100%;
+	.heading {
+		font-family:"Open Sans", sans-serif;
+	}
+	#cost{
+		left:50%;
+		position:absolute;
+		text-align:center;
+		top:50%;
+		width:250px;
+		.heading{
+			color:@red;
+		}
+	}
+}

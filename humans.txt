@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Paul Gueller -- Web Developer -- @oomlaut
+
+# THANKS
+
+    [Stopwatch icon](http://thenounproject.com/noun/stopwatch/#icon-No4102)
+    	designed by [Samuel Q. Green](http://thenounproject.com/squintongreen)
+    	from The Noun Project
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Twitter Bootstrap
+    Normalize.css, jQuery, Modernizr
+    CodeKit
