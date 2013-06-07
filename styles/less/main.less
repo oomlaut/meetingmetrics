@@ -18,8 +18,15 @@ input{
 	font-style:normal;
 }
 
+.input-append,
+.input-prepend{
+	.help-inline{
+		font-size:14px;
+
+	}
+}
 #overlay{
-	background-color:rgba(255,255,255,.85);
+	background-color:rgba(255,255,255,.75);
 	display:none;
 	height:100%;
 	position:fixed;
@@ -30,6 +37,13 @@ input{
 		font-family:"Open Sans", sans-serif;
 	}
 	#cost{
+		background-color:rgba(255,255,255,.75);
+		border:1px solid @red;
+		height:160px;
+		width:250px;
+		margin-left:-135px;
+		margin-top:-90px;
+		padding:20px;
 		left:50%;
 		position:absolute;
 		text-align:center;

@@ -1,17 +1,18 @@
-//@ codekit-append "vendor/bootstrap/bootstrap-transition.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-affix.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-alert.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-modal.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-dropdown.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-scrollspy.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-tab.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-tooltip.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-popover.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-button.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-collapse.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-carousel.js"
-//@ codekit-append "vendor/bootstrap/bootstrap-typeahead.js"
-//
+/*
+@ codekit-prepend "vendor/bootstrap/bootstrap-transition.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-affix.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-alert.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-modal.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-dropdown.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-scrollspy.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-tab.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-tooltip.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-popover.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-button.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-collapse.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-carousel.js"
+@ codekit-prepend "vendor/bootstrap/bootstrap-typeahead.js"
+*/
 // Avoid `console` errors in browsers that lack a console.
 (function() {
     var method;
@@ -35,8 +36,10 @@
     }
 }());
 
-// Place any jQuery/helper plugins in here.
-
+/**
+ * Modify the String class prototype to deal with an integer
+ * @return string formatted HH:MM:SS
+ */
 (function(){
     String.prototype.toHHMMSS = function () {
         var sec_num = parseInt(this, 10) * 1; // don't forget the second parm
@@ -49,5 +52,35 @@
         if (seconds < 10) {seconds = "0"+seconds;}
         var time    = hours+':'+minutes+':'+seconds;
         return time;
+    };
+}());
+
+(function(){
+    window.Ticker = function(args){
+        var context = this;
+        this.secondsPassed = 0;
+        this.heartbeat = null;
+        this.init = function(){
+            console.log(args);
+        };
+        this.start =  function(obj){
+            if(obj.pad > 0) {
+                this.secondsPassed += (obj.pad * 60);
+            }
+            this.heartbeat = window.setInterval(function(){
+                obj.el.trigger("update", {
+                    elapsed: ++context.secondsPassed
+                });
+            }, 1000);
+        };
+        this.stop = function(){
+            window.clearInterval(this.heartbeat);
+        };
+        this.reset = function(){
+            this.secondsPassed = 0;
+            window.clearInterval(this.heartbeat);
+            return true;
+        };
+        return this;
     };
 }());

@@ -1,49 +1,20 @@
 //@codekit-prepend "plugins.js"
 if(typeof jQuery !== undefined){
 (function($){
-	var ticker = {
-		secondsPassed: 0,
-		heartbeat: null,
-		init: function(){
-			// this.reset();
-		},
-		start: function(obj){
-			var context = this;
-			if(obj.pad > 0) {
-				context.addTime(obj.pad);
-			}
-			context.heartbeat = window.setInterval(function(){
-				obj.el.trigger("update", {
-					elapsed: ++context.secondsPassed
-				});
-			}, 1000);
-		},
-		stop: function(){
-			var context = this;
-			window.clearInterval(context.heartbeat);
-		},
-		reset: function(){
-			this.secondsPassed = 0;
-			window.clearInterval(this.heartbeat);
-			return true;
-		},
-		addTime: function(minutes){
-			var seconds = minutes * 60;
-			this.secondsPassed = this.secondsPassed + seconds;
-		}
-	};
-	// ticker.init();
 
+	var ticker = new Ticker();
 
+	$("input.control").on("focus", function(){
+		$(this).trigger("select");
+	});
+	// Bind custom events to overlay elements
 	$("#overlay").on("hide", function(){
-		$(this).hide();
 		ticker.stop();
+		$(this).fadeOut("fast");
+		$('input.control[name="pad"]').val(0);
 	}).trigger("hide")
 	.on("show", function(){
-		var $this = $(this).show();
-		$('input.control[name="pad"]').val(0);
-		// validate form fields
-
+		var $this = $(this).fadeIn("slow");
 		ticker.start({
 			el: $this,
 			pad: $('input.control[name="pad"]').val()
@@ -61,12 +32,12 @@ if(typeof jQuery !== undefined){
 		$("input.control").each(function(i, v){
 			$(v).val($(v).attr("data-default"));
 		});
-
 		$("span", this).each(function(i,v){
 			$(v).text($(v).attr("data-default"));
 		});
 	}).trigger("reset");
 
+	// Bind event to start button
 	$("#start").on("click", function(e){
 		e.preventDefault();
 		var errorCount = 0;
@@ -89,10 +60,14 @@ if(typeof jQuery !== undefined){
 			$("#overlay").trigger("show");
 		}
 	});
+
+	// Bind event to stop button
 	$("#stop").on("click", function(e){
 		e.preventDefault();
 		$("#overlay").trigger("hide");
 	});
+
+	// Bind event to reset button
 	$("#reset").on("click", function(e){
 		e.preventDefault();
 		$("#overlay").trigger("reset");

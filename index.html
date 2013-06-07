@@ -54,6 +54,7 @@
           <form action="#" class="form-horizontal" id="calculator">
             <fieldset>
                 <legend>How much does your meeting cost?</legend>
+
                 <div class="control-group">
                     <label for="attending" class="control-label">People attending</label>
                     <div class="controls">
@@ -69,7 +70,7 @@
                     <div class="controls">
                         <div class="input-prepend input-append">
                             <span class="add-on currency"><i class="icon">$</i></span>
-                            <input name="rate" type="number" class="control input-mini" title="How much is a person's time worth?" data-default="180" placeholder="$/per hour" maxlength="4" required pattern="/[0-9]{1,4}/" />
+                            <input name="rate" type="number" class="control input-mini" title="How much is a person's time worth?" data-default="180" placeholder="$/ hr" maxlength="4" required pattern="/[0-9]{1,4}/" />
                             <span class="add-on">.00</span>
                         </div>
                     </div>
@@ -80,8 +81,8 @@
                     <div class="controls">
                         <div class="input-prepend">
                             <span class="add-on"><i class="icon icon-time"></i></span>
-                            <input name="pad" type="number" class="control input-small" title="Has the meeting already started?" data-default="0" placeholder="seconds" maxlength="2" required pattern="/[0-9]{1,2}/" />
-                            <span class="help-inline">Inline help text</span>
+                            <input name="pad" type="number" class="control input-small" title="Has the meeting already started?" data-default="0" placeholder="minutes" maxlength="2" required pattern="/[0-9]{1,2}/" />
+                            <span class="help-inline">minutes</span>
                         </div>
                     </div>
                 </div>
