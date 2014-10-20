@@ -1,10 +1,17 @@
+# Logs
+*.log
+
 # Heroku files
 vendor/
 .env
 
 # Node Stuff
-# node_modules
-# bower_components
+node_modules
+
+# Bower
+bower_components
+.bower-cache
+.bower-registry
 
 # Treat rendered CSS and JavaScript as compiled binaries
 *.concat.js

@@ -11,15 +11,23 @@ Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https
     $ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
     $ cd node-js-getting-started
     $ npm install
-    $ npm start
+    $ grunt
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
 ## Deploying to Heroku
 
-    $ heroku create  
-    $ git push heroku master  
-    $ heroku open  
+    $ heroku create
+    $ git push heroku master
+    $ heroku open
+
+## Configuration
+
+In order to enable server-side configuration via `bower` and `grunt`
+
+    heroku config:add BUILDPACK_URL=https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt.git
+    heroku labs:enable user-env-compile
+    heroku config:set NODE_ENV=production
 
 ## Documentation
 

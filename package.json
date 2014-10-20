@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   },
   "dependencies": {
     "bower": "^1.3.12",
@@ -26,7 +26,10 @@
     "type": "git",
     "url": "git@bitbucket.org:oomlaut/meetings.projects.paulgueller.com.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-concurrent": "^1.0.0",
+    "grunt-foreman": "0.0.5"
+  },
   "keywords": [
     "node",
     "heroku",
