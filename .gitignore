@@ -1,4 +1,9 @@
-*.css
-*.min.js
+# Heroku files
 vendor/
 .env
+
+# Node Stuff
+node_modules
+
+*.css
+*.min.js
