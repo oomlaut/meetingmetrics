@@ -12,6 +12,7 @@ node_modules
 bower_components
 .bower-cache
 .bower-registry
+.bower-tmp
 
 # Treat rendered CSS and JavaScript as compiled binaries
 *.concat.js

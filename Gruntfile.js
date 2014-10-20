@@ -10,19 +10,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        concurrent: {
-            dev: {
-                tasks: ['foreman', 'watch'],
-                options: {
-                    logConcurrentOutput: true
-                }
-            }
-        },
-        foreman: {
-            dev: {
-                procfile: 'Procfile'
-            }
-        },
+        serverfile: 'index.js',
         less: {
             options: {
                 paths: [basePath.styles, basePath.bower + '/bootstrap/less']
@@ -84,12 +72,13 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['dev', 'concurrent:dev']);
+    grunt.registerTask('default', ['dev', 'watch']);
     grunt.registerTask('build-js', ['concat:dist', 'uglify:dist']);
     grunt.registerTask('dev', ['build-js', 'less:dev']);
     grunt.registerTask('dist', ['build-js', 'less:dist']);
 
     grunt.registerTask('heroku:development', ['dev']);
     grunt.registerTask('heroku:production', ['dist']);
+
 
 };

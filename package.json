@@ -26,10 +26,7 @@
     "type": "git",
     "url": "git@bitbucket.org:oomlaut/meetings.projects.paulgueller.com.git"
   },
-  "devDependencies": {
-    "grunt-concurrent": "^1.0.0",
-    "grunt-foreman": "0.0.5"
-  },
+  "devDependencies": {},
   "keywords": [
     "node",
     "heroku",
