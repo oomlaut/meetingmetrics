@@ -1,5 +1,5 @@
 <?php
-
+/*
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
@@ -14,9 +14,11 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
 
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  require_once 'index.html';
+  return 'Hello';
 });
 
 $app->run();
+*/
+require_onnce 'index.html'
 
 ?>
