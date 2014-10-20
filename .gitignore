@@ -1,4 +1,15 @@
-*.css
-*.min.js
+# Heroku files
 vendor/
 .env
+
+# Node Stuff
+node_modules
+bower_components
+
+# Treat rendered CSS and JavaScript as compiled binaries
+*.concat.js
+*.min.js
+*.min.css
+
+# Source Maps
+*.map

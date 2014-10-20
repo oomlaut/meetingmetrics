@@ -1,0 +1,55 @@
+@import "bootstrap";
+
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,700";
+
+body{ padding-top:60px; }
+.btn:hover{cursor:pointer;}
+
+input{
+	text-align:center;
+	&.control[name="rate"]{
+		text-align:right;
+	}
+}
+
+.add-on.currency i{
+	font-weight:700;
+	font-style:normal;
+}
+
+.input-append,
+.input-prepend{
+	.help-inline{
+		font-size:14px;
+
+	}
+}
+#overlay{
+	background-color:rgba(255,255,255,.75);
+	display:none;
+	height:100%;
+	position:fixed;
+	right:0;
+	top:0;
+	width:100%;
+	.heading {
+		font-family:"Open Sans", sans-serif;
+	}
+	#cost{
+		background-color:rgba(255,255,255,.75);
+		border:1px solid @brand-danger;
+		height:160px;
+		width:250px;
+		margin-left:-135px;
+		margin-top:-90px;
+		padding:20px;
+		left:50%;
+		position:absolute;
+		text-align:center;
+		top:50%;
+		width:250px;
+		.heading{
+			color:@brand-danger;
+		}
+	}
+}
