@@ -19,6 +19,6 @@ $app->get('/', function() use($app) {
 
 $app->run();
 */
-require_onnce 'index.html'
+require_once 'index.html'
 
 ?>
