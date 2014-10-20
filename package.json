@@ -5,8 +5,7 @@
   "author": "Paul Gueller",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "bower install && grunt dist"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "~4.9.x",

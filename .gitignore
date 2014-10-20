@@ -3,8 +3,8 @@ vendor/
 .env
 
 # Node Stuff
-node_modules
-bower_components
+# node_modules
+# bower_components
 
 # Treat rendered CSS and JavaScript as compiled binaries
 *.concat.js
