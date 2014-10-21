@@ -26,7 +26,9 @@
     "type": "git",
     "url": "git@bitbucket.org:oomlaut/meetings.projects.paulgueller.com.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-shell": "^1.1.1"
+  },
   "keywords": [
     "node",
     "heroku",

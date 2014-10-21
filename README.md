@@ -1,6 +1,6 @@
-# node-js-getting-started
+# Meeting Metrics
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A Node.js app using [Express 4](http://expressjs.com/).
 
 This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
@@ -8,10 +8,10 @@ This application support the [Getting Started with Node on Heroku](https://devce
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
-    $ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-    $ cd node-js-getting-started
+    $ heroku git:clone -a meetingmetrics
+    $ cd meetingmetrics
     $ npm install
-    $ foreman start -f Procfile.dev
+    $ grunt
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 

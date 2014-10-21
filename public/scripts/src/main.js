@@ -1,4 +1,20 @@
-//@codekit-prepend "plugins.js"
+var app = angular.module('meetingmetricsApp', [])
+
+app.controller('meetingmetricsCtrl', ['$scope', function($scope){
+
+    $scope.attending = null;
+    $scope.hourly = null;
+    $scope.pad = null;
+
+    $scope.validate = function(){
+    	console.dir($scope);
+    	return false
+    }
+
+    return $scope;
+}]);
+
+/*
 if(typeof jQuery !== undefined){
 (function($){
 
@@ -74,3 +90,4 @@ if(typeof jQuery !== undefined){
 	});
 })(jQuery);
 }
+*/

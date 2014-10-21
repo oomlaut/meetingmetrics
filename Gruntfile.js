@@ -10,7 +10,15 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        serverfile: 'index.js',
+        procfile: {
+            local: 'Procfile.local',
+            prod: 'Procfile'
+        },
+        shell: {
+            foreman: {
+                command: "foreman start -f <%= procfile.local %>"
+            }
+        },
         less: {
             options: {
                 paths: [basePath.styles, basePath.bower + '/bootstrap/less']
@@ -18,7 +26,8 @@ module.exports = function(grunt) {
             dev: {
                 options: {
                     sourceMap: true,
-                    sourceMapFilename: basePath.styles + '/../main.map'
+                    sourceMapFilename: basePath.styles + '/../main.map',
+                    sourceMapURL: '/styles/main.map'
                 },
                 files: {
                     'public/styles/main.min.css': [basePath.styles + '/main.less']
@@ -40,6 +49,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: [
+                    basePath.bower + '/bootstrap/js/modal.js',
                     basePath.scripts + '/plugins.js',
                     basePath.scripts + '/main.js'
                 ],
@@ -72,7 +82,8 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['dev', 'watch']);
+    grunt.registerTask('default', 'start');
+    grunt.registerTask('start', ['dev', 'watch']);
     grunt.registerTask('build-js', ['concat:dist', 'uglify:dist']);
     grunt.registerTask('dev', ['build-js', 'less:dev']);
     grunt.registerTask('dist', ['build-js', 'less:dist']);
