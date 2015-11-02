@@ -1,10 +1,5 @@
 # Meeting Metrics
 
-A basic tool for calculating the cost of a meeting in an environment where clients are billed by the hour for work performed.
-
-[![endorse](https://api.coderwall.com/oomlaut/endorsecount.png)](https://coderwall.com/oomlaut)
-
-
 A Node.js app using [Express 4](http://expressjs.com/).
 
 This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.

@@ -1,9 +1,5 @@
+<<<<<<< HEAD
 # Meeting Metrics
-
-A basic tool for calculating the cost of a meeting in an environment where clients are billed by the hour for work performed.
-
-[![endorse](https://api.coderwall.com/oomlaut/endorsecount.png)](https://coderwall.com/oomlaut)
-
 
 A Node.js app using [Express 4](http://expressjs.com/).
 
@@ -43,3 +39,11 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 - [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+=======
+meetingmetrics
+==============
+
+A basic tool for calculating the cost of a meeting in an environment where clients are billed by the hour for work performed.
+
+[![endorse](https://api.coderwall.com/oomlaut/endorsecount.png)](https://coderwall.com/oomlaut)
+>>>>>>> 6571fbcc28bad55a07615406cbc785159f9c7e37
